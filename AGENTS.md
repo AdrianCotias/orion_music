@@ -1,14 +1,16 @@
 # AGENTS.md
 
-Instruções para agentes de IA (Claude Code, Codex etc.) trabalhando neste repositório.
+- Separação entre código de produção e testes
+- Como e por que rodar comandos de teste 
+- Boas práticas de estrutura de projeto
 
 ## Sobre o projeto
 
-Orion Music — projeto ainda em estágio inicial, stack a definir.
+Orion Music é um projeto site para uma gravadora e escola de musica
 
 ## Setup / build / test
 
-_A preencher assim que a stack do projeto for escolhida (comandos de instalação, build, lint e testes)._
+
 
 ## Convenções
 

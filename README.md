@@ -1,6 +1,6 @@
 # Orion Music
 
-Descrição do projeto (a preencher).
+Orion Music é um projeto de site para uma gravadora e escola de musica
 
 ## Como rodar
 
