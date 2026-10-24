@@ -16,3 +16,10 @@
 .artists { margin: 0 0 0.75rem; color: var(--gray); }
 
 .card time { font-size: 0.85rem; }
+
+.card { transition: background 0.2s, color 0.2s; }
+
+.card:hover { background: var(--white); color: var(--black); }
+
+.card:hover .type,
+.card:hover .artists { color: #444; }
