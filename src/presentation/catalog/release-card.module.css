@@ -1,0 +1,18 @@
+.card {
+  border: 1px solid var(--white);
+  padding: 1.25rem 1.5rem;
+  clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 0 100%);
+}
+
+.type {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gray);
+}
+
+.title { margin: 0.4rem 0; font-size: 1.4rem; }
+
+.artists { margin: 0 0 0.75rem; color: var(--gray); }
+
+.card time { font-size: 0.85rem; }

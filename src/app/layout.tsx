@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import { SiteHeader } from "../presentation/layout/site-header";
+import "./globals.css";
 
 export const metadata = {
   title: "Orion Music",
@@ -8,7 +10,10 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body>
+        <SiteHeader />
+        {children}
+      </body>
     </html>
   );
 }
