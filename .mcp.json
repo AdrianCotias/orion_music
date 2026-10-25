@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "orion-music": {
+      "command": "pnpm",
+      "args": ["exec", "tsx", "mcp/server.mts"]
+    }
+  }
+}
