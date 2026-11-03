@@ -1,11 +1,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
-import {
-  artistRepository,
-  listReleases,
-  releaseRepository,
-} from "../src/infrastructure/container";
+import { getRelease, listArtists, listReleases } from "../src/infrastructure/container";
 
 const server = new McpServer({ name: "orion-music", version: "0.1.0" });
 
@@ -33,12 +29,11 @@ server.registerTool(
     annotations: readOnly,
   },
   async ({ id }) => {
-    const release = await releaseRepository.findById(id);
+    const release = await getRelease.execute(id);
     if (!release) {
       return { isError: true, content: [{ type: "text" as const, text: `Lançamento "${id}" não encontrado.` }] };
     }
-    const artists = await artistRepository.findByIds(release.artistIds);
-    return json({ ...release, releasedAt: release.releasedAt.toISOString(), artists });
+    return json(release);
   },
 );
 
@@ -48,7 +43,7 @@ server.registerTool(
     description: "Lista os artistas do catálogo da Orion Music (id, nome e gênero).",
     annotations: readOnly,
   },
-  async () => json(await artistRepository.findAll()),
+  async () => json(await listArtists.execute()),
 );
 
 await server.connect(new StdioServerTransport());
